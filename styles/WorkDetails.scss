@@ -1,0 +1,166 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.work-details {
+  padding: 40px 80px 120px;
+
+  @include xl {
+    padding: 40px 80px 120px;
+  }
+
+  @include lg {
+    padding: 40px 50px 120px;
+  }
+
+  @include sm {
+    padding: 40px 20px 120px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    h1 {
+      @include sm {
+        font-size: 26px;
+      }
+    }
+
+    .save {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+
+        &:hover {
+          color: $pinkred;
+        }
+      }
+    }
+  }
+
+  .slider-container {
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 40px 0;
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+
+      .slide {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .prev-button,
+        .next-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 6px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.7);
+          z-index: 99;
+
+          &:hover {
+            background-color: white;
+          }
+        }
+
+        .prev-button {
+          left: 10px;
+        }
+
+        .next-button {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+
+    img {
+      cursor: pointer;
+      width: 150px;
+      height: auto;
+    }
+
+    .selected {
+      border: 3px black solid;
+    }
+
+    .show-more {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  hr {
+    margin: 20px 0;
+  }
+
+  .profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0;
+    }
+  }
+
+  p {
+    max-width: 800px;
+    margin: 20px 0 40px;
+  }
+
+  button {
+    margin-top: 50px;
+    
+    @include buttonStyle;
+    
+    &:hover {
+      box-shadow: 0 0 10px 3px rgb(98, 98, 98);
+    }
+  }
+}

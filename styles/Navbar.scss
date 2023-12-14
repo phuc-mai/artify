@@ -1,0 +1,112 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.navbar {
+  padding: 15px 80px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include sm {
+    padding: 10px;
+  }
+
+  img {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  &_search {
+    border: 1px solid $grey;
+    border-radius: 30px;
+    height: 50px;
+    padding: 0px 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    input {
+      border: none;
+      outline: none;
+    }
+
+    &:hover {
+      @include shadow;
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include sm {
+      gap: 0px;
+    }
+
+    .cart {
+      margin: 0;
+      border: 1px solid $grey;
+      padding: 5px 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    &_account {
+      display: flex;
+      align-items: center;
+      border: none;
+      display: flex;
+      gap: 10px;
+      background-color: white;
+      cursor: pointer;
+
+      img {
+        width: 40px;
+      }
+    }
+
+    &_accountmenu {
+      position: absolute;
+      background-color: white;
+      right: 60px;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 10px 0;
+      border: 1px solid $lightgrey;
+      border-radius: 20px;
+      @include shadow;
+      z-index: 9999;
+
+      @include sm {
+        right: 20px;
+      }
+
+      a {
+        padding: 8px 15px;
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          color: $pinkred;
+          background-color: rgba(217, 213, 213, 0.2);
+        }
+      }
+    }
+  }
+}

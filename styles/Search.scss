@@ -1,0 +1,12 @@
+@import "./breakpoints.scss";
+@import "./variables.module.scss";
+
+
+.title-list {
+  margin: 40px 100px;
+  color: $blue;
+
+  @include sm {
+    margin: 40px 50px;
+  }
+}

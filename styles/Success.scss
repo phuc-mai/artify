@@ -1,0 +1,27 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    color: $pinkred;
+  }
+
+  p {
+    margin: 20px 0 50px;
+    font-size: 20px
+  }
+
+  a {
+    @include buttonStyle;
+
+    &:hover {
+      box-shadow: 0 0 10px 3px rgb(98, 98, 98);
+    }
+  }
+}

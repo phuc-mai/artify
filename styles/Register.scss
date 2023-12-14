@@ -1,0 +1,114 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 225, 225);
+
+  &_decor {
+    height: 550px;
+    width: 300px;
+    border-radius: 30px 0 0 30px;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    gap: 15px;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0 30px 30px 0;
+
+    @include lg {
+      width: 45%;
+    }
+
+    @include ml {
+      width: 50%;
+    }
+
+    @include md {
+      width: 70%;
+      border-radius: 30px;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 70%;
+
+      input {
+        width: 100%;
+        padding: 7px 15px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        text-align: center;
+        color: white;
+
+        input:not(:placeholder-shown):focus {
+          background: transparent; /* or background: none; */
+        }
+
+        &::placeholder {
+          color: white;
+        }
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        cursor: pointer;
+        color: white;
+        font-size: 14px;
+
+        img {
+          width: 25px;
+        }
+      }
+
+      button {
+        margin-top: 15px;
+
+        @include buttonStyle;
+        width: 250px;
+      }
+    }
+
+    .google {
+      margin-top: 5px;
+      width: 250px;
+
+      @include GoogleButton;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

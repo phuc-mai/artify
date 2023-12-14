@@ -1,0 +1,199 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.form {
+  background-color: $lightgrey;
+  padding: 40px 60px 120px;
+
+  @include mm {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    color: $blue;
+    margin-bottom: 30px;
+  }
+
+  form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+
+    @include sm {
+      padding: 30px 20px;
+    }
+
+    h3 {
+      color: $blue;
+      margin: 0;
+    }
+
+    .category-list {
+      margin: 20px 0 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 20px;
+
+      @include lg {
+        padding: 0 20px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 17px;
+        cursor: pointer;
+    
+        &:hover {
+          color: $pinkred
+        }
+      }
+
+      .selected {
+        color: $pinkred;
+      }
+    }
+
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0 40px;
+
+      .photo {
+        position: relative;
+        width: 250px;
+        height: 150px;
+        cursor: move;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 3px;
+          border: none;
+          background-color: rgba(255, 255, 255, 0.8);
+          font-size: 20px;
+          cursor: pointer;
+
+          &:hover {
+            color: $pinkred
+          }
+        }
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 1px dashed $grey;
+
+        .icon {
+          font-size: 60px;
+        }
+
+        p {
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+
+      .together {
+        width: 250px;
+        height: 150px;
+      }
+
+      .alone {
+        padding: 40px 100px;
+        border-radius: 10px;
+
+        @include mm {
+          padding: 40px 80px;
+        }
+
+        @include sm {
+          padding: 40px 30px;
+        }
+      }
+    }
+
+    .title {
+      input {
+        border: 1px solid $grey;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .description {
+      p {
+        font-weight: 600;
+        margin: 20px 0 10px;
+      }
+
+      input,
+      textarea {
+        border: 1px solid $grey;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        width: 600px;
+
+        @include ml {
+          width: 450px
+        }
+
+        @include md {
+          width: 350px
+        }
+
+        @include sm {
+          width: 280px
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      span {
+        font-size: 25px;
+        font-weight: 600;
+        margin-right: 20px;
+      }
+
+      .price {
+        width: 200px;
+      }
+    }
+  }
+
+  .submit_btn {
+    margin-top: 40px;
+
+    @include buttonStyle;
+
+    &:hover {
+      box-shadow: 0 0 10px 3px rgb(117, 117, 117);
+    }
+  }
+}

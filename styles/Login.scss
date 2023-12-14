@@ -1,0 +1,110 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(198, 212, 255);
+
+  &_decor {
+    height: 450px;
+    width: 300px;
+    border-radius: 30px 0 0 30px;
+
+    @include md {
+      display: none;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    gap: 15px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0 30px 30px 0;
+
+    @include lg {
+      width: 45%;
+    }
+
+    @include ml {
+      width: 50%;
+    }
+
+    @include md {
+      width: 70%;
+      border-radius: 30px;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 70%;
+
+      input {
+        width: 100%;
+        padding: 7px 15px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        text-align: center;
+        color: white;
+
+        input:not(:placeholder-shown):focus {
+          background: transparent; /* or background: none; */
+        }
+
+        &::placeholder {
+          color: white;
+        }
+      }
+
+      .error {
+        color: $pinkred;
+      }
+
+      button {
+        margin-top: 15px;
+        width: 250px;
+  
+        @include buttonStyle;
+      }
+    }
+
+    .google {
+      margin-top: 5px;
+      width: 250px;
+
+      @include GoogleButton;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      text-align: center;
+      margin: 15px 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      color: white;
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+}

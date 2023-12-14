@@ -1,0 +1,146 @@
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    background-color: $lightgrey;
+    width: 60%;
+    padding: 60px;
+
+    @include xl {
+      width: 70%;
+    }
+
+    @include lg {
+      width: 80%;
+    }
+
+    @include ml {
+      padding: 60px 30px;
+    }
+
+    @include md {
+      width: 90%;
+    }
+
+    @include sm {
+      padding: 60px 10px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 60px;
+
+      @include sm {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      h2 {
+        color: $darkgrey;
+        span {
+          color: $pinkred;
+        }
+      }
+    }
+
+    .all-items {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      .item {
+        display: flex;
+        align-items: center;
+
+        &_info {
+          flex: 3;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          font-size: 13px;
+
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+          }
+
+          .text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+          }
+        }
+
+        .quantity {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          font-size: 22px;
+          font-weight: 700;
+        }
+
+        .price {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 7px;
+
+          @include mm {
+            display: none;
+          }
+
+          p {
+            color: $darkgrey;
+          }
+        }
+
+        .remove {
+          flex: 0.5;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          &:hover {
+            color: $pinkred
+          }
+        }
+
+        button {  
+          @include buttonStyle;
+
+          &:hover {
+            box-shadow: 0 0 10px 3px rgb(98, 98, 98);
+          }
+        }
+      }
+      
+    }
+  }
+}

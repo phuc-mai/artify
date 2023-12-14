@@ -1,0 +1,65 @@
+$pinkred: #f8395a;
+$blue: #24355a;
+$lightgrey: #F6F6F6;
+$grey: #bdb9b9;
+$darkgrey: #918F8E;
+$lightblue: #D9DFE8;
+
+@mixin shadow {
+  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+@mixin buttonStyle {
+  padding: 10px 15px;
+  // background-color: $pinkred;
+  background: linear-gradient(to right, rgb(59 130 246), rgb(144, 78, 232));
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+  }
+}
+
+@mixin GoogleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 250px;
+  padding: 10px 0;
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 10px;
+
+  p {
+    color: black;
+    font-size: 18px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+  }
+}
+
+:export {
+  pinkred: $pinkred;
+  blue: $blue;
+  lightgrey: $lightgrey;
+  grey: $grey;
+  darkgrey: $darkgrey;
+  lightblue: $lightblue
+}

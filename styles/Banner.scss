@@ -1,0 +1,20 @@
+.banner {
+  width: 100vw;
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../public/assets/banner.png");
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+
+  h1 {
+    padding: 40px;
+    max-width: 1000px;
+    font-size: 70px;
+    text-align: center;
+    color: white;
+  }
+}
