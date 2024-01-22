@@ -1,10 +1,10 @@
-import { connectToDB } from "@mongodb/database";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-
-import User from "@models/User";
 import { compare } from "bcryptjs";
+
+import { connectToDB } from "@mongodb/database";
+import User from "@models/User";
 
 const handler = NextAuth({
   providers: [
@@ -22,6 +22,10 @@ const handler = NextAuth({
     CredentialsProvider({
       name: "Credentials",
       async authorize(credentials, req) {
+        if (!credentials.email || !credentials.password) {
+          throw new Error("Invalid Email or Password");
+        }
+        
         await connectToDB();
 
         /* Check if the user exists */

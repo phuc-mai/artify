@@ -10,7 +10,7 @@ const Order = () => {
 
   const orders = session?.user?.orders
 
-  return !orders? <Loader /> : (
+  return (
     <>
       <Navbar />
       <div className="orders">

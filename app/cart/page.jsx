@@ -90,7 +90,6 @@ const Cart = () => {
     }
   }
 
-  console.log(cart)
   return !session?.user?.cart ? <Loader /> : (
     <>
       <Navbar />
