@@ -83,6 +83,11 @@ const WorkDetails = () => {
   const isLiked = wishlist?.find((item) => item?._id === work._id);
 
   const patchWishlist = async () => {
+    if (!session) {
+      router.push("/login");
+      return;
+    }
+
     const response = await fetch(`api/user/${userId}/wishlist/${work._id}`, {
       method: "PATCH",
     });
@@ -100,7 +105,7 @@ const WorkDetails = () => {
       router.push("/login");
       return;
     }
-    
+
     const newCartItem = {
       workId,
       image: work.workPhotoPaths[0],
@@ -205,7 +210,11 @@ const WorkDetails = () => {
         <hr />
 
         <div className="profile">
-          <img src={work.creator.profileImagePath} alt="profile" onClick={() => router.push(`/shop?id=${work.creator._id}`)}/>
+          <img
+            src={work.creator.profileImagePath}
+            alt="profile"
+            onClick={() => router.push(`/shop?id=${work.creator._id}`)}
+          />
           <h3>Created by {work.creator.username}</h3>
         </div>
 
