@@ -96,6 +96,11 @@ const WorkDetails = () => {
   const isInCart = cart?.find((item) => item?.workId === workId);
 
   const addToCart = async () => {
+    if (!session) {
+      router.push("/login");
+      return;
+    }
+    
     const newCartItem = {
       workId,
       image: work.workPhotoPaths[0],
