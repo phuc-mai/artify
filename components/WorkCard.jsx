@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const WorkCard = ({ work }) => {
+  console.log(work);
   /* SLIDER FOR PHOTOS */
   const [currentIndex, setCurrentIndex] = useState(0);
 

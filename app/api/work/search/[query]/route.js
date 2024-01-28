@@ -19,6 +19,8 @@ export const GET = async (req, { params }) => {
       }).populate("creator");
     }
 
+    console.log(works)
+
     if (!works) return new Response("No works found", { status: 404 });
 
     return new Response(JSON.stringify(works), { status: 200 });
